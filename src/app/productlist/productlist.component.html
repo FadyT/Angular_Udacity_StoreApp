@@ -1,5 +1,5 @@
 <h1>{{title }}</h1>
-
+<!--
 <ul *ngFor="let p of productItems">
     <li>ID : {{p.id}}</li>
     <li>Name : {{p.name}}</li>
@@ -7,3 +7,5 @@
     <li><img src="{{p.url}}"></li>
     <li>Description : {{p.description}}</li>
 </ul>
+-->
+<app-product-item *ngFor="let p of productItems" [item]="p"></app-product-item>

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { product } from '../models/product';
 import * as data from '../../assets/items_data.json';
 import { NgFor } from '@angular/common';
+import { ProductItemComponent } from '../product-item/product-item.component';
 
 @Component({
   selector: 'app-productlist',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor , ProductItemComponent],
   templateUrl: './productlist.component.html',
   styleUrl: './productlist.component.css'
 })
