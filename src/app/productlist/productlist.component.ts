@@ -14,11 +14,18 @@ import { ProductItemComponent } from '../product-item/product-item.component';
 export class ProductlistComponent {
   title: string = 'Product List'
   productItems : product[] = [];
-
+  cartItems : product[] = []; 
   constructor() { }
 
+  addtocart(p:product) : void{
+    this.cartItems.push(p);
+    this.cartItems.forEach(element => {
+      console.log(element.amount +": " + element.name +  " added to the cart !" );
+    });
+  }
+
   ngOnInit(): void {
-    console.log( JSON.stringify(data));
+    //console.log( JSON.stringify(data));
 
     this.productItems =[
       {
@@ -64,6 +71,9 @@ export class ProductlistComponent {
           "description": "Wear it with style!"
       }
     ]; 
-  
+    
+    this.productItems.forEach(element => {
+      element.amount = 0;
+    });
   }
 }

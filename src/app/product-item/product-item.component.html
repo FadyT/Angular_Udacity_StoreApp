@@ -3,3 +3,22 @@
 <p>Price {{item.price}} $</p>
 <img src="{{item.url}}">
 <p>{{item.description}}</p>
+<!--
+<select name="amount">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>-->
+  <p>items count : {{item.amount}}</p>
+  <button (click)="decrease(item)">-</button>
+  <button (click)="increase(item)">+</button>
+  <br>
+  <br>
+  <button (click)="additemtocart(item)">Add To Cart</button>
