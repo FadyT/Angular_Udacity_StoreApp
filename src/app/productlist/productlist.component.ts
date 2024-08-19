@@ -12,7 +12,7 @@ import { ProductItemComponent } from '../product-item/product-item.component';
   styleUrl: './productlist.component.css'
 })
 export class ProductlistComponent {
-  title: string = 'Product List'
+  title: string = 'Home Page'
   productItems : product[] = [];
   cartItems : product[] = []; 
   constructor() { }
