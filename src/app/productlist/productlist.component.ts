@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { product } from '../models/product';
-import * as data from '../../assets/items_data.json';
 import { NgFor } from '@angular/common';
 import { ProductItemComponent } from '../product-item/product-item.component';
 import { ProductsdataService } from '../services/productsdata.service';
