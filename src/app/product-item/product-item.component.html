@@ -1,8 +1,16 @@
 <h1>{{item.name}}</h1>
 <p>ID {{item.id}}</p>
 <p>Price {{item.price}} $</p>
-<img src="{{item.url}}">
+<a [routerLink]="['/iteminfo']" (click)="setCurrentItemIndex(item)" ><img src="{{item.url}}"> </a>
 <p>{{item.description}}</p>
+  <p>items count : {{item.amount}}</p>
+  <button (click)="decrease(item)">-</button>
+  <button (click)="increase(item)">+</button>
+  <br>
+  <br>
+  <button (click)="additemtocart(item)">Add To Cart</button>
+
+  
 <!--
 <select name="amount">
     <option value="1">1</option>
@@ -16,9 +24,3 @@
     <option value="9">9</option>
     <option value="10">10</option>
   </select>-->
-  <p>items count : {{item.amount}}</p>
-  <button (click)="decrease(item)">-</button>
-  <button (click)="increase(item)">+</button>
-  <br>
-  <br>
-  <button (click)="additemtocart(item)">Add To Cart</button>

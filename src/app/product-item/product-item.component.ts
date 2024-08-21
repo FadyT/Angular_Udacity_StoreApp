@@ -1,16 +1,23 @@
 import { Component , Input , Output, EventEmitter } from '@angular/core';
 import { product } from '../models/product';
+import { RouterOutlet , RouterLink } from '@angular/router';
+import { ProductsdataService } from '../services/productsdata.service';
 
 @Component({
   selector: 'app-product-item',
   standalone: true,
-  imports: [],
+  imports: [RouterLink , RouterOutlet],
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.css'
 })
 export class ProductItemComponent {
   @Input() item : product ;
   @Output() addtocart: EventEmitter<product> = new EventEmitter;
+
+  setCurrentItemIndex(i:product){
+    console.log("selected product of id : " + i.id );
+    this.productservice.setCurrentItem(i.id);
+  }
 
   increase(i:product){
     if(i.amount != undefined){
@@ -30,7 +37,7 @@ export class ProductItemComponent {
     this.addtocart.emit(p);
   }
 
-constructor(){
+constructor(private productservice :ProductsdataService){
   this.item = {
     id:0,
     name : '',

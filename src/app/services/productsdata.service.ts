@@ -9,6 +9,7 @@ export class ProductsdataService {
 
   productItems : product[] = [];
   cartItems : product[] = []; 
+  currentItem:number = 0;
 
   constructor() { }
 
@@ -19,6 +20,14 @@ export class ProductsdataService {
     });
   }
 
+  setCurrentItem(i:number){
+    this.currentItem = i-1;
+  }
+  
+  getCurrentItem(){
+    return this.productItems[this.currentItem];
+  }
+  
   getproducts(){
     this.productItems =[
       {
