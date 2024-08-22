@@ -1,17 +1,41 @@
 import { Injectable } from '@angular/core';
 import { product } from '../models/product';
+import { user } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProductsdataService {
-
+  userdata : user;
   productItems : product[] = [];
   cartItems : product[] = []; 
   currentItem:number = 0;
+  totalprice:number = 0;
 
-  constructor() { }
+  constructor() {
+    this.userdata = {
+      name:'',
+      address:'',
+      cardnumber:'',
+    }
+   }
+
+   settotalprice(p:number){
+    this.totalprice = p;
+   }
+
+   gettotalprice(){
+    return this.totalprice;
+   }
+
+   getuserdata(){
+    return this.userdata;
+   }
+
+   saveuserdata(u :user){
+    this.userdata = u;
+   }
 
   addtocart(p: product) {
     this.cartItems.push(p);
@@ -73,7 +97,7 @@ export class ProductsdataService {
           "description": "Wear it with style!"
       }
     ]; 
-    
+
     this.productItems.forEach(element => {
       element.amount = 0;
     });
