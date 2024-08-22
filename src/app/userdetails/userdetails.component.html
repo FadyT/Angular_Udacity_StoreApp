@@ -1,0 +1,11 @@
+<h1>User Details </h1>
+<form #form="ngForm" (ngSubmit)="placeOrder()"> 
+    <p>User Name {{name}}</p>
+    <input type="text" name="username" required minlength="8" maxlength="32" placeholder="Please enter your name" [(ngModel)]="name" >
+    <p>User address {{address}}</p>
+    <input type="text" name="address" required  minlength="8" maxlength="32" placeholder="Please enter your address" [(ngModel)]="address">
+    <p>Card Number {{cardnumber}}</p>
+    <input type="text" name="cardnumber" required minlength="16" maxlength="16" placeholder="Please enter 16 number on your card" [(ngModel)]="cardnumber" >
+    <br>
+    <input type="submit" [disabled]="form.invalid" value="submit">
+</form>
