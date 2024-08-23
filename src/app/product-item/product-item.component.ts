@@ -13,6 +13,7 @@ import { ProductsdataService } from '../services/productsdata.service';
 export class ProductItemComponent {
   @Input() item : product ;
   @Output() addtocart: EventEmitter<product> = new EventEmitter;
+  @Output() removefromcart: EventEmitter<product> = new EventEmitter;
 
   setCurrentItemIndex(i:product){
     console.log("selected product of id : " + i.id );
@@ -41,9 +42,9 @@ export class ProductItemComponent {
     this.addtocart.emit(p);
   }
   removeitemfromcart(p :product ){
-    window.alert(" removed " + p.amount+ " " + p.name + " from the cart !")
-    console.log(p.amount +": " + p.name +  " removed from the cart !" );
-    this.productservice.removefromcart(p);
+    window.alert("Removed " + p.amount+ " " + p.name + " from the cart !")
+    this.removefromcart.emit(p);
+
   }
 
 constructor(private productservice :ProductsdataService){

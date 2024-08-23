@@ -19,13 +19,25 @@ export class CartComponent {
 
   constructor(private productservice : ProductsdataService){}
   
-  ngOnInit(): void {
+  removefromcart(p:product) : void{
+    console.log("Updating..." +p.amount +": " + p.name +  " removed from the cart !" );
+    this.productservice.removefromcart(p);
+    this.calculatetotalprice();
+  }
+
+  calculatetotalprice(){
     this.productItems = this.productservice.cartItems;
+    this.totalprice = 0;
     this.productItems.forEach(element => {
       if(element.amount){
         this.totalprice += element.price * element.amount ;
       }
     });
     this.productservice.settotalprice(this.totalprice);
+  }
+
+  ngOnInit(): void {
+    this.calculatetotalprice();
+    
   }
 }

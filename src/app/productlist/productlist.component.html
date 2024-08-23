@@ -8,4 +8,4 @@
     <li>Description : {{p.description}}</li>
 </ul>
 -->
-<app-product-item *ngFor="let p of productItems" [item]="p" (addtocart) = "addtocart($event)"></app-product-item>
+<app-product-item *ngFor="let p of productItems" [item]="p" (addtocart) = "addtocart($event)" (removefromcart) = "removefromcart($event)"></app-product-item>
