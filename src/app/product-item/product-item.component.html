@@ -4,8 +4,7 @@
 <a [routerLink]="['/iteminfo']" (click)="setCurrentItemIndex(item)" ><img src="{{item.url}}"> </a>
 <p>{{item.description}}</p>
   <p>items count : {{item.amount}}</p>
-  <button (click)="decrease(item)">-</button>
-  <button (click)="increase(item)">+</button>
+	<input min="0" max="10" type="number"  [(ngModel)]="item.amount" (ngModelChange)="amountUpdated($event)" placeholder="0">
   <br>
   <br>
   <button (click)="additemtocart(item)">Add To Cart</button>

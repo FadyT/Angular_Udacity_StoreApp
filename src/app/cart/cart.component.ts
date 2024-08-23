@@ -25,6 +25,10 @@ export class CartComponent {
     this.calculatetotalprice();
   }
 
+  amountChanged():void{
+    this.calculatetotalprice();
+  }
+  
   calculatetotalprice(){
     this.productItems = this.productservice.cartItems;
     this.totalprice = 0;

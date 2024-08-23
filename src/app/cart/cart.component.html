@@ -1,3 +1,3 @@
-<app-product-item *ngFor="let p of productItems"  [item]="p" (removefromcart) = "removefromcart($event)"></app-product-item>
+<app-product-item *ngFor="let p of productItems"  [item]="p"  (amountChanged) = "amountChanged()" (removefromcart) = "removefromcart($event)"></app-product-item>
 <p>Total price {{totalprice}}</p>
 <app-userdetails></app-userdetails>

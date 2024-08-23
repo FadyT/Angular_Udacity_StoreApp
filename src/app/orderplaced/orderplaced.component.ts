@@ -22,7 +22,7 @@ export class OrderplacedComponent {
       cardnumber:'',
       address:'',
     }
-    this.price = productsdataservice.gettotalprice();
+    this.price = this.productsdataservice.gettotalprice();
   }
 
   
@@ -30,6 +30,7 @@ export class OrderplacedComponent {
   ngOnInit() {
 
     this.data = this.productsdataservice.getuserdata()
+    this.price = this.productsdataservice.gettotalprice();
     this.name = this.data.name;
   }
 }
