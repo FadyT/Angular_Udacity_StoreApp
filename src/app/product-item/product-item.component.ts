@@ -29,12 +29,21 @@ export class ProductItemComponent {
     if(i.amount != undefined && i.amount>0){
       i.amount-=1;
       console.log("amount decreased to " + i.amount + i.name);
+      if(i.amount ==0){
+        this.removeitemfromcart(i);
+      }
     }
   }
 
   additemtocart(p :product ){
+    window.alert(" added " + p.amount+ " " + p.name + " to the cart !")
     console.log("Add item to cart : " + p.name);
     this.addtocart.emit(p);
+  }
+  removeitemfromcart(p :product ){
+    window.alert(" removed " + p.amount+ " " + p.name + " from the cart !")
+    console.log(p.amount +": " + p.name +  " removed from the cart !" );
+    this.productservice.removefromcart(p);
   }
 
 constructor(private productservice :ProductsdataService){

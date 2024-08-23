@@ -21,6 +21,11 @@ export class ProductlistComponent {
     this.productservice.addtocart(p);
   }
 
+  removefromcart(p:product) : void{
+    console.log(p.amount +": " + p.name +  " removed from the cart !" );
+    this.productservice.removefromcart(p);
+  }
+
   ngOnInit(): void {
     this.productItems = this.productservice.getproducts();
   }

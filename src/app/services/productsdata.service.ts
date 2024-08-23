@@ -45,7 +45,14 @@ export class ProductsdataService {
       console.log(element.amount +": " + element.name +  " added to the cart !" );
     });
   }
+  removefromcart(p: product) {
+    this.cartItems = this.cartItems.filter(obj => obj !== p);
+    console.log(p.amount +": " + p.name +  " removed from the cart !" );
 
+    this.cartItems.forEach(element => {
+      console.log(element.amount +": " + element.name +  " added to the cart !" );
+    });
+  }
   setCurrentItem(i:number){
     this.currentItem = i-1;
   }
