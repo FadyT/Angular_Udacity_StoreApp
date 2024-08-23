@@ -3,11 +3,12 @@ import { user } from '../models/user';
 import { FormsModule } from '@angular/forms';
 import { ProductsdataService } from '../services/productsdata.service';
 import { Router } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-userdetails',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule , NgIf],
   templateUrl: './userdetails.component.html',
   styleUrl: './userdetails.component.css'
 })

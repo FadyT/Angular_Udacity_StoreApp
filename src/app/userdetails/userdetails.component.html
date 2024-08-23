@@ -1,11 +1,26 @@
 <h1>User Details </h1>
 <form #form="ngForm" (ngSubmit)="placeOrder()"> 
     <p>User Name {{name}}</p>
-    <input type="text" name="username" required minlength="8" maxlength="32" placeholder="Please enter your name" [(ngModel)]="name" >
+    <input type="text" name="username" required minlength="8" maxlength="32" placeholder="Please enter your name" [(ngModel)]="name" #usernameid="ngModel">
+    <div *ngIf="usernameid.invalid && usernameid.dirty">
+        <div *ngIf="usernameid.errors?.['minlength']">
+            The title of the blog must contain at least 8 characters. .
+        </div>
+    </div>
     <p>User address {{address}}</p>
-    <input type="text" name="address" required  minlength="8" maxlength="32" placeholder="Please enter your address" [(ngModel)]="address">
+    <input type="text" name="address" required  minlength="8" maxlength="32" placeholder="Please enter your address" [(ngModel)]="address" #addressid="ngModel">
+    <div *ngIf="addressid.invalid && addressid.dirty">
+        <div *ngIf="addressid.errors?.['minlength']">
+            address must be more than 8 characters.
+        </div>
+    </div>
     <p>Card Number {{cardnumber}}</p>
-    <input type="text" name="cardnumber" required minlength="16" maxlength="16" placeholder="Please enter 16 number on your card" [(ngModel)]="cardnumber" >
+    <input type="text" name="cardnumber" required minlength="16" maxlength="16" placeholder="Please enter 16 number on your card" [(ngModel)]="cardnumber" #cardnumberid="ngModel">
+    <div *ngIf="cardnumberid.invalid && cardnumberid.dirty">
+        <div *ngIf="cardnumberid.errors?.['minlength']">
+            card must be 16 number.
+        </div>
+    </div>
     <br>
     <input type="submit" [disabled]="form.invalid" value="submit">
 </form>
