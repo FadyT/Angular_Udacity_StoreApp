@@ -1,27 +1,29 @@
 # App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+this is a simple angular store project
+
+# components 
+
+Project consist of 
+- products list component used to display all products in home page
+- product item component to display image and details for each item , having add to cart and remove buttons and input for items count
+- cart component that displays the added products
+- user info component that is a form collecting data from user
+- order placed component that confirm the order details 
+
+# services 
+- one service is used to handle all product data containing
+
+  userdata
+  productItems
+  cartItems 
+  currentItem
+  totalprice
+
+# navbar
+
+- nav bar component is created to navigate between routes 
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
